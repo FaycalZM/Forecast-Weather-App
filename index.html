@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://openweathermap.org/img/wn/02d@2x.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Forecast-Weather App</title>
+</head>
+<body>
+    <main class="main">
+        <section class="current-section">
+            
+        </section>
+        <nav class="navbar">
+            <ul>
+                <li><a class=" link hourly">Hourly</a></li>    
+                <li><a class="link daily">Daily</a></li>   
+                <li><a class="link details">Details</a></li>   
+            </ul>
+            <button class="location-btn">get current location</button>
+            <form class="search-section">
+                <input type="text" id="latitude-search-field" placeholder="Latitude Here">
+                <input type="text" id="longitude-search-field" placeholder="longitude Here">
+                <button type="submit"><img class="search-icon" width="20px" src="./img/search-solid.svg" alt="search-icon"></button>
+            </form>
+            <a class="menu">...</a>
+        </nav>
+        <hr class="line">
+        <section class="additional-infos">
+           
+            
+        </section>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>
