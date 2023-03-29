@@ -5,10 +5,11 @@
 }
 
 body {
-    height: 120vh;
+    min-height: 100vh;
     max-height: fit-content;
     max-width: 100vw;
     background-image: url("./img/sebastian-unrau-sp-p7uuT0tw-unsplash.jpg");
+    backdrop-filter: blur(4px);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -16,11 +17,11 @@ body {
 
 .main {
     height: 100%;
-    width: 100%;
-    backdrop-filter: blur(4px);
-    padding: 2rem 3.5rem;
+    width: 99%;
+    margin: 0 auto;
+    padding: 7rem 3.5rem 2rem 3.5rem;
     color: white;
-    font-family:"lexend deca";
+    font-family: "lexend deca";
 }
 
 @keyframes loading {
@@ -28,6 +29,7 @@ body {
         opacity: 1;
         transform: scale(1.4);
     }
+
     to {
         opacity: 0;
         transform: scale(0.6);
@@ -44,17 +46,19 @@ body {
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    
+
 }
 
 @keyframes show {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
+
 .current-section {
     display: flex;
     justify-content: space-between;
@@ -67,25 +71,29 @@ body {
 
 .gen-infos {
     flex: 1;
-    text-shadow: 0 5px 10px rgba(0,0,0,0.8);
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
 }
+
 .city {
     font-size: 2.5rem;
     text-transform: capitalize;
     font-weight: 400;
 }
+
 .date {
     font-weight: 400;
     font-size: 115%;
     letter-spacing: 0.7px;
     padding: 0.3rem 0.5rem 0 0;
 }
+
 .current-icon {
     width: 10%;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,.7) );
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, .7));
     border: none;
 }
+
 .description {
     font-size: 1.5rem;
     width: 10%;
@@ -99,34 +107,44 @@ body {
 
 .temp {
     font-size: 9rem;
-    text-shadow: 0 6px 10px rgba(0,0,0,0.7); 
+    text-shadow: 0 6px 10px rgba(0, 0, 0, 0.7);
 }
+
 .temps {
     text-align: center;
     font-size: 2rem;
-    text-shadow: 0 6px 10px rgba(0,0,0,0.7); 
+    text-shadow: 0 6px 10px rgba(0, 0, 0, 0.7);
     transform: translateX(-12%);
 }
+
 .humidity {
     color: rgba(255, 0, 0, 0.589);
 }
+
 .wind {
     font-size: 1.3rem;
 }
+
 .navbar {
     padding: 1rem 0.5rem 0.5rem 0;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 }
+
 ul {
     list-style: none;
     display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
-.navbar > ul > li {
-    padding : 0 1rem;
+
+.navbar>ul>li {
+    padding: .5rem;
 }
-.navbar > ul > li > a {
+
+.navbar>ul>li>a {
     font-size: 1.3rem;
 }
 
@@ -139,45 +157,54 @@ ul {
 }
 
 .search-section {
-    flex: 1;
+    width: 50%;
     display: flex;
-    justify-content: center;
-    padding: 0.5rem 1rem 0 1rem;
+    justify-content: flex-end;
+    padding: 0.5rem 1.5rem .5rem 1rem;
 }
-#latitude-search-field , #longitude-search-field {
+
+#latitude-search-field,
+#longitude-search-field {
     width: 25%;
     border: none;
-    background-color: rgba(0,0,0,.4);
-    box-shadow: 0 5px 10px rgba(0,0,0,.65);
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .65);
     border-radius: 20px;
     padding: 0.5rem 1rem;
     color: white;
     font-family: "poppins";
     margin-right: 1rem;
 }
-#latitude-search-field:focus::placeholder , #longitude-search-field:focus::placeholder {
+
+#latitude-search-field:focus::placeholder,
+#longitude-search-field:focus::placeholder {
     color: white;
     transform: scale(0.8) translateY(-30%);
     opacity: 0;
     transition: all ease 0.5s;
 }
-#latitude-search-field , #longitude-search-field:focus {
+
+#latitude-search-field,
+#longitude-search-field:focus {
     outline: none;
 }
 
-.search-section > button {
+.search-section>button {
     background: transparent;
-    border : none;
+    border: none;
 }
+
 .search-icon {
     width: 25px;
     opacity: 0.6;
     cursor: pointer;
 }
+
 .search-icon:hover {
     opacity: 1;
     transition: all ease-out 1s;
 }
+
 .search-icon:hover {
     opacity: 1;
 }
@@ -190,48 +217,61 @@ a {
     cursor: pointer;
     opacity: 0.3;
 }
+
 a:hover {
     opacity: 1;
-    transition:all ease 0.8s;
+    transition: all ease 0.8s;
 }
 
 
 .additional-infos {
     display: flex;
+    justify-content: center;
     overflow: auto;
+    flex-wrap: wrap;
 }
 
-.hourly-item , .daily-item , .details-section> div  {
-    flex: 1;
-    border: 1px solid rgba(255,255,255,.3);
+.hourly-item,
+.daily-item,
+.details-section>div {
+    border: 1px solid rgba(255, 255, 255, .3);
     border-radius: 10px;
-    box-shadow: inset 0 4px 10px rgba(0,0,0,.5);
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, .5);
     margin: 0.6rem 0.5rem 0.5rem 0;
-    padding :  0.5rem 1rem 0.6rem 1rem;
-} 
+    padding: 0.5rem 1rem 0.6rem 1rem;
+}
+
+.hourly-item {
+    flex: 1;
+}
 
 .hourly-item:hover {
     opacity: 0.5;
     transition: all ease 0.5s;
-    
+
 }
-.hourly-item >.tmp {
+
+.hourly-item>.tmp {
     padding: 0;
-    
+
 }
-.hourly-item > .hour {
+
+.hourly-item>.hour {
     text-transform: uppercase;
 }
-.hourly-item > p {
+
+.hourly-item>p {
     width: 90%;
     text-align: center;
     font-size: 1.6rem;
     text-transform: capitalize;
     padding: 1rem 0 0 0;
 }
-.hourly-item > .desc{
+
+.hourly-item>.desc {
     font-size: 1rem;
 }
+
 .icon {
     width: 40%;
     transform: translateX(50%);
@@ -239,12 +279,17 @@ a:hover {
 
 .daily-item {
     padding: 0 1rem 2rem 1rem;
+    margin-right: 2rem;
+    min-width: 10rem;
 }
-.daily-item > p {
+
+.daily-item>p {
     padding: 0 0 0.3rem 0;
     font-size: 0.8rem;
+    width: 90%;
 }
-.daily-item > .day {
+
+.daily-item>.day {
     width: 90%;
     text-align: center;
     padding-bottom: 1rem;
@@ -257,19 +302,18 @@ a:hover {
     border: none;
     padding: 0.5rem 0.8rem;
     border-radius: 15px;
-    transform: translateX(10%);
     cursor: pointer;
-    background : linear-gradient(to right top ,
-        rgba(255,255,255,.5),
-        rgba(255,255,255,1)
-    );
+    background: linear-gradient(to right top,
+            rgba(255, 255, 255, .5),
+            rgba(255, 255, 255, 1));
     font-family: "poppins";
     font-size: 0.9rem;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.6);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
 }
+
 .btn-details:hover {
     color: white;
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, .6);
     transition: all ease 1s;
 }
 
@@ -280,19 +324,22 @@ a:hover {
     padding: 2rem 2rem 1rem 2rem;
     line-height: 2rem;
 }
-.details-section > div > p {
+
+.details-section>div>p {
     text-transform: capitalize;
 }
-.details-section > .temp-section {
+
+.details-section>.temp-section {
     flex: 1;
 }
 
-.weather > img {
+.weather>img {
     width: 30%;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,.5));
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, .5));
     transform: translateX(120%);
 }
-.weather > p {
+
+.weather>p {
     text-align: center;
     transform: translateY(-50%);
     font-size: 140%;
@@ -302,60 +349,74 @@ a:hover {
     border: none;
     padding: 0.5rem 0.8rem;
     border-radius: 15px;
-    transform: translateX(10%);
+    /* transform: translateX(10%); */
     cursor: pointer;
-    background : linear-gradient(to right top ,
-        rgba(255,255,255,.5),
-        rgba(255,255,255,1)
-    );
+    background: linear-gradient(to right top,
+            rgba(255, 255, 255, .5),
+            rgba(255, 255, 255, 1));
     font-family: "poppins";
     font-size: 0.85rem;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.6);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
     text-transform: capitalize;
-    margin-top: 0.5rem;
-    
+    margin: 0 .5rem;
+
 }
+
 .location-btn:hover {
     color: white;
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, .6);
     transition: all ease 1s;
 }
 
 .alert {
     width: 60%;
     margin: 0 auto;
-    font-weight: 400 ;
+    font-weight: 400;
     font-size: 120%;
     margin-top: 4rem;
     text-align: center;
 }
 
 @media screen and (max-width : 1024px) {
+
+    .main {
+        padding-top: 6rem;
+    }
+
     .temp {
         font-size: 4rem;
     }
+
     .city {
         font-size: 2rem;
     }
+
     .date {
         font-size: 100%;
     }
+
     .description {
         font-size: 1.2rem;
     }
+
     .temps {
         font-size: 1.4rem;
     }
 
-    #latitude-search-field , #longitude-search-field {
+    #latitude-search-field,
+    #longitude-search-field {
         width: 40%;
     }
-    #latitude-search-field::placeholder , #longitude-search-field::placeholder {
-        color: rgba(255,255,255,.4);
+
+    #latitude-search-field::placeholder,
+    #longitude-search-field::placeholder {
+        color: rgba(255, 255, 255, .4);
     }
-    .navbar > ul > li > a {
+
+    .navbar>ul>li>a {
         font-size: 1.1rem;
     }
+
     .location-btn {
         font-size: 75%;
         width: 15%;
@@ -365,103 +426,174 @@ a:hover {
         width: 95%;
         font-size: 0.8rem;
         transform: unset;
-    } 
+    }
+
     .icon {
         width: 50%;
     }
-    .details-section > p {
+
+    .hourly-item {
+        flex: unset;
+    }
+
+    .daily-item {
+        min-width: 10rem;
+    }
+
+    .details-section>p {
         font-size: 1rem;
     }
-    .details-section > div > p {
+
+    .details-section>div>p {
         font-size: 90%;
     }
-    
+
 }
 
 @media screen and (max-width : 800px) {
+
+
+    .main {
+        padding-top: 4rem;
+    }
+
     .navbar {
         flex-direction: column-reverse;
     }
+
+    .search-section {
+        width: 90%;
+    }
+
+    #latitude-search-field,
+    #longitude-search-field {
+        width: 50%;
+        border: none;
+        background-color: rgba(0, 0, 0, .4);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .65);
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        color: white;
+        font-family: "poppins";
+        margin-right: 1rem;
+    }
+
     .menu {
         display: none;
     }
+
     .location-btn {
-        width: 40%;
-        margin : 1rem 0 1.5rem 0;
+        width: 30%;
+        margin: 1rem auto;
         transform: translateX(-10%);
     }
+
     .current-icon {
         width: 20%;
     }
 
-    .details-section{
+    .details-section {
         flex-direction: column-reverse;
     }
-    .details-section > div {
+
+    .details-section>div {
         width: 60%;
     }
-    .details-section > .weather {
+
+    .details-section>.weather {
         border: none;
         box-shadow: none;
     }
 
-    .details-section > .weather > img {
+    .details-section>.weather>img {
         width: 40%;
         transform: translateX(70%);
     }
-    .details-section > .weather > p {
+
+    .details-section>.weather>p {
         font-size: 170%;
-        text-shadow: 0 5px 10px rgba(0,0,0,.9);
+        text-shadow: 0 5px 10px rgba(0, 0, 0, .9);
     }
 
 }
+
 @media screen and (max-width : 570px) {
     .current-section {
         flex-direction: column;
     }
+
     .gen-infos {
         text-align: center;
     }
+
     .current-icon {
         width: 30%;
     }
+
     .description {
 
         width: 100%;
         text-align: center;
     }
+
     .temp-infos {
         text-align: center;
         width: 60%;
     }
+
     .temps {
         transform: translateX(-4%);
     }
+
     .temp {
         font-size: 5rem;
     }
+
     .additional-infos {
         flex-direction: column;
     }
-    .daily-item , .hourly-item {
+
+    .daily-item,
+    .hourly-item {
         flex: unset;
         width: 75%;
         margin: 0.6rem auto;
     }
-    .daily-item > p {
+
+    .daily-item>p {
         font-size: 1.1rem;
     }
-    .daily-item > .day {
+
+    .daily-item>.day {
         font-size: 1.4rem;
     }
+
     .btn-details {
         width: 80%;
         transform: translateX(10%);
         margin: 0.4rem auto;
     }
+
+    .location-btn {
+        width: 45%;
+    }
+
+    .search-section {
+        width: 95%;
+    }
+
+    #latitude-search-field,
+    #longitude-search-field {
+        width: 60%;
+    }
+
 }
 
 @media screen and (max-width : 480px) {
+    .main {
+        padding-top: 2.5rem;
+    }
+
     .temp-infos {
         width: 80%;
         transform: translateX(5%);

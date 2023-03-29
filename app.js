@@ -127,7 +127,7 @@ document.querySelector(".search-section").addEventListener("submit", (event) => 
 // displaying the "hourly" infos
 document.querySelector(".hourly").addEventListener("click", () => {
 
-    document.body.style.height = "550vh";
+
     additionalInfos.innerHTML = "";
     additionalInfos.style.display = "flex";
     for (let i = 0; i < 8; i++) {
@@ -152,7 +152,6 @@ document.querySelector(".hourly").addEventListener("click", () => {
 //displaying the "daily" infos
 document.querySelector(".daily").addEventListener("click", () => {
 
-    document.body.style.height = "550vh";
     additionalInfos.innerHTML = "";
     additionalInfos.style.display = "flex";
     for (let i = 0; i < results.daily.length; i++) {
@@ -192,7 +191,7 @@ document.querySelector(".daily").addEventListener("click", () => {
     let detailsBtns = document.getElementsByClassName("btn-details");
     for (let i = 0; i < detailsBtns.length; i++) {
         detailsBtns[i].addEventListener("click", () => {
-            document.body.style.height = "200vh"
+
             additionalInfos.style.display = "unset";
             additionalInfos.innerHTML = "";
             let info = results.daily[i];
@@ -239,7 +238,7 @@ document.querySelector(".location-btn").addEventListener("click", () => {
                 let latitude = position.coords.latitude;
                 fetch(`${url}lat=${latitude}&lon=${longitude}&appid=${appKey}&units=metric`).
                     then((response) => response.json()).
-                    then((data) => { // the heavy lifting goes here...
+                    then((data) => {
                         results = data;
                         let timezone = data.timezone;
                         let { temp, dt, humidity, wind_speed, weather } = data.current;
@@ -275,7 +274,7 @@ document.querySelector(".location-btn").addEventListener("click", () => {
 
 // displaying the details section
 document.querySelector(".details").addEventListener("click", () => {
-    document.body.style.height = "120vh"
+
     additionalInfos.innerHTML = "";
     let alert = document.createElement("h4");
     alert.className = "alert";
